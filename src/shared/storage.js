@@ -5,8 +5,8 @@ import { join } from 'path';
 const BACKUP_PREFIX = 'db-backups';
 
 function getStorageConfig(env) {
-	const storageLocation = env.STORAGE_LOCATIONS
-		? env.STORAGE_LOCATIONS.split(',')[0].trim()
+	const storageLocation = env.STORAGE_BACKUP_LOCATIONS
+		? env.STORAGE_BACKUP_LOCATIONS.split(',')[0].trim()
 		: 'local';
 	const prefix = storageLocation.toUpperCase();
 	const driverKey = `STORAGE_${prefix}_DRIVER`;

@@ -20,8 +20,8 @@ export async function performBackup({ filesService, foldersService, env, label, 
 	const sanitized = sanitizeLabel(label);
 	const filename = `backup_${ts}_${sanitized}.dump`;
 
-	const storageLocation = env.STORAGE_LOCATIONS
-		? env.STORAGE_LOCATIONS.split(',')[0].trim()
+	const storageLocation = env.STORAGE_BACKUP_LOCATIONS
+		? env.STORAGE_BACKUP_LOCATIONS.split(',')[0].trim()
 		: 'local';
 
 	const filenameDisk = await uploadBackupToStorage(dumpBuffer, filename, env);

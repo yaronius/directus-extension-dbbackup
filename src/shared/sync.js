@@ -16,8 +16,8 @@ export async function syncBackups({ foldersService, env, database }) {
 		return { recovered: 0, files: [] };
 	}
 
-	const storageLocation = env.STORAGE_LOCATIONS
-		? env.STORAGE_LOCATIONS.split(',')[0].trim()
+	const storageLocation = env.STORAGE_BACKUP_LOCATIONS
+		? env.STORAGE_BACKUP_LOCATIONS.split(',')[0].trim()
 		: 'local';
 
 	const recovered = [];

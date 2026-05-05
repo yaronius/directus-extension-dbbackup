@@ -229,8 +229,8 @@ export default defineEndpoint({
 				const ts = now.toISOString().replace(/[:.]/g, '-').slice(0, 19);
 				const filename = `backup_${ts}_${sanitized}.dump`;
 
-				const storageLocation = env.STORAGE_LOCATIONS
-					? env.STORAGE_LOCATIONS.split(',')[0].trim()
+				const storageLocation = env.STORAGE_BACKUP_LOCATIONS
+					? env.STORAGE_BACKUP_LOCATIONS.split(',')[0].trim()
 					: 'local';
 
 				const filenameDisk = await uploadBackupToStorage(buffer, filename, env);
